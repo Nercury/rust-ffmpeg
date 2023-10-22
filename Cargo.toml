@@ -21,10 +21,11 @@ default = ["codec", "device", "filter", "format", "software-resampling", "softwa
 # don't do anything anymore (equivalents are automatically specified through
 # compile-time detection in ffmpeg-sys-next). Deprecation plan: all these
 # features will be removed come 5.0.
-ffmpeg43 = []
-ffmpeg42 = []
-ffmpeg41 = []
-ffmpeg4 = []
+#
+# right? But I do what I need to get shit to work
+ffmpeg_4_2 = ["ffmpeg-sys-next/version_4_2"]
+ffmpeg_4_3 = ["ffmpeg-sys-next/version_4_3"]
+ffmpeg_4_4 = ["ffmpeg-sys-next/version_4_4"]
 
 static = ["ffmpeg-sys-next/static"]
 build  = ["static", "ffmpeg-sys-next/build"]
@@ -115,3 +116,5 @@ optional = true
 [dependencies.ffmpeg-sys-next]
 version = "6.0.1"
 default-features = false
+git = "https://github.com/Nercury/rust-ffmpeg-sys"
+branch = "master"
